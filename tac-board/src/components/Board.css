@@ -1,0 +1,40 @@
+.Board {
+    position: relative;
+
+    width: 800px;
+    height: 800px;
+
+    margin: auto;
+
+    background-color: #d3b17d;
+    box-shadow: 16px  16px #d3b17d;
+}
+
+.house {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+
+    background-color: grey;
+}
+
+.house-0 {
+    top: 16px;
+    left: 16px
+}
+
+.house-1 {
+    top: 16px;
+    right:  16px
+}
+
+.house-2 {
+    bottom: 16px;
+    right: 16px
+}
+
+.house-3 {
+    bottom: 16px;
+    left: 16px
+}
