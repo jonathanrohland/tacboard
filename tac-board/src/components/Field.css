@@ -1,10 +1,17 @@
 .field {
     position: absolute;
-    background-color: grey;
 
     width: 32px;
     height: 32px;
     border-radius: 16px;
+}
+
+.field--empty:nth-child(even) {
+    background-color: grey;
+}
+
+.field--empty:nth-child(odd) {
+    background-color: lightslategray;
 }
 
 .field--red {
