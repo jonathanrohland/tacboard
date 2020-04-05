@@ -4,15 +4,9 @@ import classnames from 'classnames';
 
 import Field from './Field';
 import './Board.css';
-import { FieldIndex } from '../rootReducer';
+import { FieldIndex, Color } from '../types';
+import House from './House';
 
-
-function renderHouse(index: number) {
-    const indexClass = `house-${index}`;
-
-    return <div className={classnames("house", indexClass)}/> 
-
-}
 
 function Board(props: {
 
@@ -25,7 +19,7 @@ function Board(props: {
     return (
         <div className={classnames("Board")}>
             { fieldIndexes.map(fieldIndex => <Field index={fieldIndex} />)}
-            { [0,1,2,3].map(renderHouse)}
+    { [Color.RED, Color.BLUE, Color.GREEN,  Color.BLACK].map(color => <House color={color} />)}
         </div>
     );
 }

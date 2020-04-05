@@ -1,0 +1,35 @@
+
+
+.house {
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    border-radius: 32px;
+
+    background-color: grey;
+}
+
+.house--red {
+    background-color: red;
+    
+    top: 16px;
+    left: 16px
+}
+
+.house--blue {
+    background-color: blue;
+    top: 16px;
+    right:  16px
+}
+
+.house--green {
+    background-color: green;
+    bottom: 16px;
+    right: 16px
+}
+
+.house--black {
+    background-color: black;
+    bottom: 16px;
+    left: 16px
+}

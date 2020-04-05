@@ -2,24 +2,24 @@
     position: absolute;
     background-color: grey;
 
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
 }
 
-.red {
+.field--red {
     background-color: red;
 }
 
-.blue {
+.field--blue {
     background-color: blue;
 }
 
-.green {
+.field--green {
     background-color: green;
 }
 
-.black {
+.field--black {
     background-color: black;
 }
 
