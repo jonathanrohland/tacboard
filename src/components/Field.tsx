@@ -13,6 +13,7 @@ type OwnProps = {
 
 type StateProps = {
     color: Color | 'empty'
+    isPickedUp: boolean
 }
 
 type DispatchProps = {
@@ -23,13 +24,21 @@ type Props = OwnProps & StateProps & DispatchProps;
 
 
 function Field(props: Props) {
-    const indexClass = `field-${props.index}`;
+    const classes = classnames({
+        'field': true,
+        [`field-${props.index}`]: true,
+        'field--picked-up': props.isPickedUp,
+        [`field--${props.color.toString()}`]: true
+    })
 
-    return <div onClick={props.onFieldClick} className={classnames("field", indexClass, `field--${props.color.toString()}`)} />
+    return <div onClick={props.onFieldClick} className={classes} />
 }
 
 function mapStateToProps(state: State, { index }: OwnProps): StateProps {
-    return { color: state.marblePositions![index] || 'empty' }
+    return {
+        color: state.marblePositions![index] || 'empty',
+        isPickedUp: state.pickedUpMarble?.field === index
+    }
 }
 
 const mapDispatchToProps = (dispatch: any, { index }: OwnProps): DispatchProps => {

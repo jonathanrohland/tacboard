@@ -30,6 +30,10 @@
     background-color: black;
 }
 
+.field--picked-up {
+    box-shadow: 0 0 4px 4px whitesmoke;
+}
+
 .field-0 { top: calc(50% + 45% * 0);	left: calc(50% - 45% * 1); }
 .field-1 { top: calc(50% + 45% * 0.0980171403295606);	left: calc(50% - 45% * 0.995184726672197); }
 .field-2 { top: calc(50% + 45% * 0.195090322016128);	left: calc(50% - 45% * 0.98078528040323); }
