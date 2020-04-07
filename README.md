@@ -1,4 +1,18 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Tacboard - Frontend
+
+This project is a React-based single-page-app that provides a playing board for the boardgame [TAC](https://spieltac.de).
+
+The Frontend is intended to run against a Websocket-Server as described in the [tacboard-backend repository](https://github.com/jonathanrohland/tacboard-backend).
+
+
+## Functionality
+
+The application only simulates the board and marbles for the TAC-game. The application was developed during the Corona-Crisis to facilitate playing TAC remotely via video-conferencing tools. Each party should own a separate set of cards for a fluent playing experience. Exchange of cards can be handled using messenger-apps and post-its to note the new value of swapped cards.
+
+The game synchronises the state of the game via websocket-messages. There is no persistence of state on the server, when the last client closes the application the state is lost.
+
+At the moment there is only one global session available, so it is not possible to run multiple games in parallel.
+
 
 ## Available Scripts
 
@@ -27,18 +41,9 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
+### `yarn deploy`
+Pushes the content of the build-folder to an S3-bucket which should be configured for static website hosting.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Bootstrapping
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
