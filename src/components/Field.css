@@ -43,7 +43,7 @@
 }
 
 .field--picked-up {
-    box-shadow: 0 0 4px 4px whitesmoke;
+    box-shadow: 0 0 4px 4px gold;
 }
 
 .field-0 { top: calc(50% + 45% * 0);	left: calc(50% - 45% * 1); }
