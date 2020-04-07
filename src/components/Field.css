@@ -1,9 +1,21 @@
 .field {
     position: absolute;
+}
 
-    width: 32px;
-    height: 32px;
-    border-radius: 16px;
+@media(min-width: 800px) {
+    .field { 
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+    }
+}
+
+@media(max-width: 799px) {
+    .field { 
+        width: 24px;
+        height: 24px;
+        border-radius: 12px;
+    }
 }
 
 .field--empty:nth-child(even) {

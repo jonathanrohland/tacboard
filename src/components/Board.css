@@ -1,8 +1,10 @@
 .Board {
     position: relative;
 
-    width: 740px;
-    height: 740px;
+    width: 100vw;
+    height: 100vw;
+    max-width: 1200px;
+    max-height: 1200px;
 
     margin: auto;
 
