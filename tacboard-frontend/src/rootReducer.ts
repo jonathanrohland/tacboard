@@ -1,7 +1,19 @@
 import { Action, ActionType } from "./actions";
 import { State, FieldIndex, Color } from "./types";
+import { getWebsocket } from './Websocket';
 
 
+const webSocket = getWebsocket();
+
+function sendMarblePositionsToServer(state: State) {
+    console.log("Sending marble positions to server:", state.marblePositions);
+    console.log(webSocket);
+
+    webSocket.send(JSON.stringify({
+        'message': 'sendmessage',
+        'data': JSON.stringify(state.marblePositions),
+    }))
+}
 
 function isMarblePickedUp(state: State) {
     return state.pickedUpMarble !== undefined;
@@ -23,15 +35,19 @@ function setMarbleToField(state: State, index: FieldIndex) {
         [index]: state.pickedUpMarble.color
     }
 
-    if (state.pickedUpMarble.field !== null) {
+    if (state.pickedUpMarble.field !== null  && state.pickedUpMarble.field !== index) {
         nextMarblePostitions[state.pickedUpMarble.field] = undefined;
     }
 
-    return {
+    const nextState = {
         ...state,
         marblePositions: nextMarblePostitions,
         pickedUpMarble: undefined
     }
+
+    sendMarblePositionsToServer(nextState);
+
+    return nextState;
 }
 
 function pickUpMarbleFromField(state: State, index: FieldIndex) {
@@ -43,7 +59,6 @@ function pickUpMarbleFromField(state: State, index: FieldIndex) {
 
     if (!state.marblePositions![index]) {
         throw new Error(`Invalid state, no marble to pick up at index ${index}, state is: ${state.toString()}`);
-
     }
 
     return {
@@ -62,10 +77,14 @@ function dropMarbleToHouse(state: State) {
         nextMarblePostitions![state.pickedUpMarble!.field] = undefined;
     }
 
-    return {
+    const nextState = {
         ...state,
         pickedUpMarble: undefined,
     }
+
+    sendMarblePositionsToServer(nextState);
+
+    return nextState;
 }
 
 function pickUpMarbleFromHouse(state: State, color: Color) {
@@ -97,6 +116,15 @@ export function rootReducer(state: State | undefined, action?: Action): State {
         }
 
         return pickUpMarbleFromHouse(state, action.payload!.color);
+    }
+
+    if (action?.type === ActionType.UPDATE_FROM_SERVER) {
+        console.log('Updating marble positions from server:', action.payload.marblePositions)
+
+        return {
+            ...state,
+            marblePositions: action.payload.marblePositions
+        }
     }
 
     return state;

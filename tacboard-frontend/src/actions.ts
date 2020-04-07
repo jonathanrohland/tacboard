@@ -7,8 +7,9 @@ export type Action = {
 }
 
 export enum ActionType {
-    FIELD_CLICKED =  'FIELD_CLICKED',
-    HOUSE_CLICKED =  'HOUSE_CLICKED',
+    FIELD_CLICKED = 'FIELD_CLICKED',
+    HOUSE_CLICKED = 'HOUSE_CLICKED',
+    UPDATE_FROM_SERVER = 'UPDATE_FROM_SERVER',
 }
 
 export const fieldClicked = (index: FieldIndex) => (dispatch: any) => {
