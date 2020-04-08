@@ -1,5 +1,3 @@
-
-
 .house {
     position: absolute;
     width: 64px;
@@ -7,6 +5,10 @@
     border-radius: 32px;
 
     background-color: grey;
+}
+
+.house--picked-up {
+    box-shadow: 0 0 4px 4px gold;
 }
 
 .house--red {

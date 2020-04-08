@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import classnames from 'classnames';
 
-import { Color } from '../types';
+import { Color, State } from '../types';
 import './House.css';
 import { ActionType } from '../actions';
 
@@ -11,24 +11,26 @@ type OwnProps = {
     color: Color;
 }
 
-// type StateProps = {
-//     color: Color | 'empty'
-// }
+type StateProps = {
+    isPickedUp: boolean
+}
 
 type DispatchProps = {
     onHouseClick: () => {}
 }
 
-type Props = OwnProps & DispatchProps;
+type Props = OwnProps & StateProps & DispatchProps;
 
 
 function Field(props: Props) {
-    return <div onClick={props.onHouseClick} className={classnames("house", `house--${props.color.toString()}`)} />
+    return <div onClick={props.onHouseClick} className={classnames("house", `house--${props.color.toString()}`, props.isPickedUp ? 'house--picked-up' : null)} />
 }
 
-// function mapStateToProps(state: State, { index }: OwnProps): StateProps {
-//     return { color: state.marblePositions![index] || 'empty' }
-// }
+function mapStateToProps(state: State, { color }: OwnProps): StateProps {
+    return {
+        isPickedUp: state.pickedUpMarble?.field === null && state.pickedUpMarble?.color === color
+    }
+}
 
 const mapDispatchToProps = (dispatch: any, { color }: OwnProps): DispatchProps => {
     return {
@@ -36,4 +38,4 @@ const mapDispatchToProps = (dispatch: any, { color }: OwnProps): DispatchProps =
     }
 }
 
-export default connect<{}, DispatchProps, OwnProps>(null, mapDispatchToProps)(Field);
+export default connect<StateProps, DispatchProps, OwnProps>(mapStateToProps, mapDispatchToProps)(Field);
