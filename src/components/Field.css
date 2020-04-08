@@ -111,22 +111,22 @@
 .field-62 { top: calc(50% + 45% * -0.195090322016129);	left: calc(50% - 45% * 0.98078528040323); }
 .field-63 { top: calc(50% + 45% * -0.0980171403295605);	left: calc(50% - 45% * 0.995184726672197); }
 
-.field-64 { top: 50%;	left: 9%; }
-.field-65 { top: 50%;	left: 13%; }
-.field-66 { top: 50%;	left: 17%; }
-.field-67 { top: 50%;	left: 21%; }
+.field-64 { top: 50%;	left: 21%; }
+.field-65 { top: 50%;	left: 17%; }
+.field-66 { top: 50%;	left: 13%; }
+.field-67 { top: 50%;	left: 9%; }
 
-.field-68 { top: 50%;	right: 9%; }
-.field-69 { top: 50%;	right: 13%; }
-.field-70 { top: 50%;	right: 17%; }
-.field-71 { top: 50%;	right: 21%; }
+.field-68 { top: 50%;	right: 18%; }
+.field-69 { top: 50%;	right: 14%; }
+.field-70 { top: 50%;	right: 10%; }
+.field-71 { top: 50%;	right: 6%; }
 
-.field-72 { left: 50%;	top: 9%; }
-.field-73 { left: 50%;	top: 13%; }
-.field-74 { left: 50%;	top: 17%; }
-.field-75 { left: 50%;	top: 21%; }
+.field-72 { left: 50%;	top: 21%; }
+.field-73 { left: 50%;	top: 17%; }
+.field-74 { left: 50%;	top: 13%; }
+.field-75 { left: 50%;	top: 9%; }
 
-.field-76 { left: 50%;	bottom: 9%; }
-.field-77 { left: 50%;	bottom: 13%; }
-.field-78 { left: 50%;	bottom: 17%; }
-.field-79 { left: 50%;	bottom: 21%; }
+.field-76 { left: 50%;	bottom: 18%; }
+.field-77 { left: 50%;	bottom: 14%; }
+.field-78 { left: 50%;	bottom: 10%; }
+.field-79 { left: 50%;	bottom: 6%; }
