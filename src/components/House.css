@@ -1,37 +1,65 @@
 .house {
     position: absolute;
-    width: 64px;
-    height: 64px;
-    border-radius: 32px;
+    width: 80px;
+    height: 80px;
+    border-radius: 40px;
 
     background-color: grey;
 }
 
-.house--picked-up {
+.house--picked-up .house__marble:last-of-type {
     box-shadow: 0 0 4px 4px gold;
 }
 
 .house--red {
-    background-color: red;
-    
     top: 16px;
     left: 16px
 }
 
 .house--blue {
-    background-color: blue;
     top: 16px;
     right:  16px
 }
 
 .house--green {
-    background-color: green;
     bottom: 16px;
     right: 16px
 }
 
 .house--black {
-    background-color: black;
     bottom: 16px;
     left: 16px
+}
+
+.house__marble-container {
+    height: 56px;
+    width: 56px;
+    margin: 12px;
+
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.house__marble {
+    height: 24px;
+    width: 24px;
+
+    border-radius: 12px;
+    margin: 2px;
+}
+
+.house--red .house__marble {
+    background-color: red;
+}
+
+.house--blue .house__marble {
+    background-color: blue;
+}
+
+.house--green .house__marble {
+    background-color: green;
+}
+
+.house--black .house__marble {
+    background-color: black;
 }
