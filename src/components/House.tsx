@@ -5,6 +5,7 @@ import classnames from 'classnames';
 import { ActionType } from '../actions';
 import { Color, State } from '../types';
 import './House.css';
+import { getNumberOfMarblesOnboard } from '../selectors';
 
 
 type OwnProps = {
@@ -33,13 +34,9 @@ function House(props: Props) {
     );
 }
 
-function countMarblesOfColor(state: State, color: Color) {
-    return Object.values(state.marblePositions!).reduce((count, marbleColor) => marbleColor === color ? count + 1 : count, 0);
-}
-
 function mapStateToProps(state: State, { color }: OwnProps): StateProps {
     return {
-        numMarbles: 4 - countMarblesOfColor(state, color),
+        numMarbles: 4 - getNumberOfMarblesOnboard(state, color),
         isPickedUp: state.pickedUpMarble?.field === null && state.pickedUpMarble?.color === color
     }
 }

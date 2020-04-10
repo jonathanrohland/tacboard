@@ -1,6 +1,7 @@
 import { Action, ActionType } from "./actions";
 import { State, FieldIndex, Color } from "./types";
 import { getWebsocket } from './Websocket';
+import { getNumberOfMarblesOnboard } from "./selectors";
 
 
 const webSocket = getWebsocket();
@@ -35,7 +36,7 @@ function setMarbleToField(state: State, index: FieldIndex) {
         [index]: state.pickedUpMarble.color
     }
 
-    if (state.pickedUpMarble.field !== null  && state.pickedUpMarble.field !== index) {
+    if (state.pickedUpMarble.field !== null && state.pickedUpMarble.field !== index) {
         nextMarblePostitions[state.pickedUpMarble.field] = undefined;
     }
 
@@ -115,7 +116,11 @@ export function rootReducer(state: State | undefined, action?: Action): State {
             return dropMarbleToHouse(state);
         }
 
-        return pickUpMarbleFromHouse(state, action.payload!.color);
+        if (getNumberOfMarblesOnboard(state, action.payload!.color) < 4) {
+            return pickUpMarbleFromHouse(state, action.payload!.color);
+        }
+
+        return state;
     }
 
     if (action?.type === ActionType.UPDATE_FROM_SERVER) {
