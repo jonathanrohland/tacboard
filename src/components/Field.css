@@ -1,5 +1,7 @@
 .field {
     position: absolute;
+
+    border: 1px solid rgb(73, 73, 73)
 }
 
 @media(min-width: 800px) {
@@ -17,6 +19,14 @@
         border-radius: 12px;
     }
 }
+
+/* .field--empty {
+    box-shadow: inset 0 0 5px #0000009c;
+}
+
+.field:not(.field--empty) {
+    box-shadow: 2px 2px 2px 2px #0000009c;
+} */
 
 .field--empty:nth-child(even) {
     background-color: grey;
