@@ -1,3 +1,18 @@
 .App {
   text-align: center;
 }
+
+:root {
+  /* Marble-related colors */
+  --red: #c70039;
+  --green: #0b8457;
+  --blue: #2056b4;
+  --black: #192823;
+
+  --selected-yellow: #eac100;
+  
+  /* Board-related colors */
+  --empty-field-even: #d4d7dd; /* previously `grey` */
+  --empty-field-odd: #eae9e9; /* previously `lightslategrey` */
+  --field-border-color: rgb(73, 73, 73);
+}

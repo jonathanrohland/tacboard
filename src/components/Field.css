@@ -1,7 +1,7 @@
 .field {
     position: absolute;
 
-    border: 1px solid rgb(73, 73, 73)
+    border: 1px solid var(--field-border-color);
 }
 
 @media(min-width: 800px) {
@@ -20,7 +20,8 @@
     }
 }
 
-/* .field--empty {
+/* This is an attempt to add the impression of depth to the fields, but it didn't work out so well
+.field--empty {
     box-shadow: inset 0 0 5px #0000009c;
 }
 
@@ -29,31 +30,31 @@
 } */
 
 .field--empty:nth-child(even) {
-    background-color: grey;
+    background-color: var(--empty-field-even);
 }
 
 .field--empty:nth-child(odd) {
-    background-color: lightslategray;
+    background-color: var(--empty-field-odd);
 }
 
 .field--red {
-    background-color: red;
+    background-color: var(--red);
 }
 
 .field--blue {
-    background-color: blue;
+    background-color: var(--blue);
 }
 
 .field--green {
-    background-color: green;
+    background-color: var(--green);
 }
 
 .field--black {
-    background-color: black;
+    background-color: var(--black);
 }
 
 .field--picked-up {
-    box-shadow: 0 0 4px 4px gold;
+    box-shadow: 0 0 4px 4px var(--selected-yellow);
 }
 
 .field-0 { top: calc(50% + 45% * 0);	left: calc(50% - 45% * 1); }

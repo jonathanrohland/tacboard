@@ -3,13 +3,13 @@
     width: 80px;
     height: 80px;
     border-radius: 40px;
-    border: 1px solid rgb(73, 73, 73);
+    border: 1px solid var(--field-border-color);
 
-    background-color: grey;
+    background-color: var(--empty-field-even);
 }
 
 .house--picked-up .house__marble:last-of-type {
-    box-shadow: 0 0 4px 4px gold;
+    box-shadow: 0 0 4px 4px var(--selected-yellow);
 }
 
 .house--red {
@@ -46,23 +46,23 @@
     width: 24px;
 
     border-radius: 12px;
-    border: 1px solid rgb(73, 73, 73);
+    border: 1px solid var(--field-border-color);
 
     margin: 1px;
 }
 
 .house--red .house__marble {
-    background-color: red;
+    background-color: var(--red);
 }
 
 .house--blue .house__marble {
-    background-color: blue;
+    background-color: var(--blue);
 }
 
 .house--green .house__marble {
-    background-color: green;
+    background-color: var(--green);
 }
 
 .house--black .house__marble {
-    background-color: black;
+    background-color: var(--black);
 }
