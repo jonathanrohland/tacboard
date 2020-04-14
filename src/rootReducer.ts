@@ -11,7 +11,7 @@ function sendMarblePositionsToServer(state: State) {
     console.log(webSocket);
 
     webSocket.send(JSON.stringify({
-        'message': 'sendmessage',
+        'message': 'sendGameState',
         'data': JSON.stringify(state.marblePositions),
     }))
 }
