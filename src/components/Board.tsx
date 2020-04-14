@@ -18,8 +18,8 @@ function Board(props: {
 
     return (
         <div className={classnames("Board")}>
-            { fieldIndexes.map(fieldIndex => <Field index={fieldIndex} />)}
-    { [Color.RED, Color.BLUE, Color.GREEN,  Color.BLACK].map(color => <House color={color} />)}
+            {fieldIndexes.map(fieldIndex => <Field index={fieldIndex} key={fieldIndex} />)}
+            {[Color.RED, Color.BLUE, Color.GREEN, Color.BLACK].map(color => <House color={color} key={color} />)}
         </div>
     );
 }

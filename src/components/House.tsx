@@ -28,7 +28,7 @@ function House(props: Props) {
     return (
         <div onClick={props.onHouseClick} className={classnames("house", `house--${props.color.toString()}`, props.isPickedUp ? 'house--picked-up' : null)}>
             <div className="house__marble-container">
-                {Array.from(Array(props.numMarbles).keys()).map(index => <div className={classnames("house__marble")} />)}
+                {Array.from(Array(props.numMarbles).keys()).map(index => <div className={classnames("house__marble")} key={index} />)}
             </div>
         </div>
     );
