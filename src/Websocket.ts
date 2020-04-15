@@ -5,7 +5,9 @@ const WEBSOCKET_URL = "wss://sd8oo3pxl1.execute-api.eu-central-1.amazonaws.com/P
 function initialiseConnection(socket: WebSocket, gameId: string) {
     socket.send(JSON.stringify({
         'message': 'initSession',
-        gameId
+        'data': {
+            gameId
+        }
     }))
 }
 
