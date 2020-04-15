@@ -1,10 +1,10 @@
 let webSocket: WebSocket;
 
 function initialiseConnection(socket: WebSocket, gameId: string) {
-    // socket.send(JSON.stringify({
-    //     'message': 'initSession',
-    //     gameId
-    // }))
+    socket.send(JSON.stringify({
+        'message': 'initSession',
+        gameId
+    }))
 }
 
 

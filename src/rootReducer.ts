@@ -7,12 +7,14 @@ import { getNumberOfMarblesOnboard } from "./selectors";
 const webSocket = getWebsocket();
 
 function sendMarblePositionsToServer(state: State) {
-    console.log("Sending marble positions to server:", state.marblePositions);
-    console.log(webSocket);
+    const dataToSend = {
+        marblePositions: state.marblePositions
+    }
+    console.log("Sending marble positions to server:", dataToSend);
 
     webSocket.send(JSON.stringify({
         'message': 'sendGameState',
-        'data': JSON.stringify(state.marblePositions),
+        'data': JSON.stringify(dataToSend),
     }))
 }
 

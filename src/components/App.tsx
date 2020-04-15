@@ -20,15 +20,22 @@ const webSocket = getWebsocket();
 
 webSocket.onmessage = (event => {
   console.log('Received Data:', event.data)
-  const nextMarblePositions = JSON.parse(event.data);
-  console.log('nextMarblePositions', nextMarblePositions);
+  const eventData = JSON.parse(event.data);
+  if (eventData.marblePositions) {
+    const nextMarblePositions = eventData.marblePositions;
+    console.log('Updating marblePositions from socket-message', nextMarblePositions);
 
-  store.dispatch({
-    type: ActionType.UPDATE_FROM_SERVER,
-    payload: {
-      marblePositions: nextMarblePositions
-    }
-  })
+    store.dispatch({
+      type: ActionType.UPDATE_FROM_SERVER,
+      payload: {
+        marblePositions: nextMarblePositions
+      }
+    })
+  } else {
+    console.log('Received unhandlable socket event with data:', eventData);
+  }
+
+
 })
 
 function App() {
