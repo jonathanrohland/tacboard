@@ -36,7 +36,7 @@ function House(props: Props) {
 
 function mapStateToProps(state: State, { color }: OwnProps): StateProps {
     return {
-        numMarbles: 4 - getNumberOfMarblesOnboard(state, color),
+        numMarbles: Math.max(0, 4 - getNumberOfMarblesOnboard(state, color)),  // Math.max is required to catch invalid Array length error
         isPickedUp: state.pickedUpMarble?.field === null && state.pickedUpMarble?.color === color
     }
 }
