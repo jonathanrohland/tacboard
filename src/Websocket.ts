@@ -1,23 +1,39 @@
+import { GameId } from "./types";
+import { WEBSOCKET_URL } from "./config";
+
 let webSocket: WebSocket;
 
-const WEBSOCKET_URL = "wss://sd8oo3pxl1.execute-api.eu-central-1.amazonaws.com/Prod";
+export function initialiseConnection(socket: WebSocket, gameId: GameId) {
+    if (webSocket.readyState === WebSocket.CONNECTING) {
+        const previousOnopen = webSocket.onopen;
 
-function initialiseConnection(socket: WebSocket, gameId: string) {
-    socket.send(JSON.stringify({
-        'message': 'initSession',
-        'data': {
-            gameId
+        webSocket.onopen = (event) => {
+            if (typeof previousOnopen === 'function') {
+                previousOnopen.call(webSocket, event);
+            }
+
+            socket.send(JSON.stringify({
+                'message': 'initSession',
+                'data': {
+                    gameId
+                }
+            }))
         }
-    }))
+    } else {
+        webSocket.send(JSON.stringify({
+            'message': 'initSession',
+            'data': {
+                gameId
+            }
+        }))
+    }
 }
-
 
 function openWebsocket() {
     webSocket = new WebSocket(WEBSOCKET_URL);
 
     webSocket.onopen = () => {
         console.log('Opened Websocket connection.');
-        initialiseConnection(webSocket, 'default');
     }
 
     return webSocket;

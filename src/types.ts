@@ -5,7 +5,7 @@ export enum Color {
     BLACK = 'black',
 }
 
-export enum HouseIndex{
+export enum HouseIndex {
     RED = 'red-house',
     BLUE = 'blue-house',
     GREEN = 'green-house',
@@ -95,6 +95,7 @@ export type FieldIndex =
     79
 
 export type State = {
+    gameId?: GameId,
     marblePositions?: { [key in FieldIndex]?: Color; },
     pickedUpMarble?: {
         color: Color,
@@ -102,3 +103,4 @@ export type State = {
     }
 };
 
+export type GameId = string;

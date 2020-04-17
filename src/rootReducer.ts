@@ -1,20 +1,25 @@
 import { Action, ActionType } from "./actions";
 import { State, FieldIndex, Color } from "./types";
-import { getWebsocket } from './Websocket';
+import { getWebsocket, initialiseConnection } from './Websocket';
 import { getNumberOfMarblesOnboard } from "./selectors";
 
 
 const webSocket = getWebsocket();
 
 function sendMarblePositionsToServer(state: State) {
+    if (!state.gameId) {
+        throw new Error('Cannot send state to server without gameId');
+    }
+
     const dataToSend = {
-        marblePositions: state.marblePositions
+        gameId: state.gameId,
+        marblePositions: state.marblePositions,
     }
     console.log("Sending marble positions to server:", dataToSend);
 
     webSocket.send(JSON.stringify({
         'message': 'sendGameState',
-        'data': JSON.stringify(dataToSend),
+        'data': dataToSend,
     }))
 }
 
@@ -102,7 +107,17 @@ function pickUpMarbleFromHouse(state: State, color: Color) {
 
 export function rootReducer(state: State | undefined, action?: Action): State {
     if (typeof state === 'undefined') {
-        return { marblePositions: {} };
+        return {
+            marblePositions: {}
+        };
+    }
+
+    if (action?.type === ActionType.SET_GAME_ID) {
+        initialiseConnection(webSocket, action.payload!.gameId);
+        return {
+            ...state,
+            gameId: action.payload!.gameId
+        }
     }
 
     if (action?.type === ActionType.FIELD_CLICKED) {
