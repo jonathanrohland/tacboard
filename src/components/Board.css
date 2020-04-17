@@ -5,6 +5,8 @@
     height: 100vw;
     max-width: 100vh;
     max-height: 100vh;
+    min-width: 600px;
+    min-height: 600px;
 
     margin: auto;
 
