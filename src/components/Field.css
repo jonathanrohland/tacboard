@@ -4,7 +4,23 @@
     border: 1px solid var(--field-border-color);
 }
 
-@media(min-width: 800px) {
+@media (min-width: 1200px) {
+    .field { 
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .field { 
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
     .field { 
         width: 32px;
         height: 32px;
@@ -12,7 +28,7 @@
     }
 }
 
-@media(max-width: 799px) {
+@media (max-width: 799px) {
     .field { 
         width: 24px;
         height: 24px;

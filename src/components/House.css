@@ -1,11 +1,92 @@
 .house {
     position: absolute;
-    width: 80px;
-    height: 80px;
-    border-radius: 40px;
     border: 1px solid var(--field-border-color);
 
     background-color: var(--empty-field-even);
+}
+
+@media (min-width: 1200px) {
+    .house { 
+        width: 140px;
+        height: 140px;
+        border-radius: 70px;
+    }
+
+    .house__marble {
+        width: 48px;
+        height: 48px;
+        border-radius: 24px;
+        margin: 3px;
+    }
+
+    .house__marble-container {
+        height: 112px;
+        width: 112px;
+        margin: 14px;
+    }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+    .house { 
+        width: 120px;
+        height: 120px;
+        border-radius: 60px;
+    }
+
+    .house__marble {
+        width: 40px;
+        height: 40px;
+        border-radius: 20px;
+        margin: 2px;
+    }
+
+    .house__marble-container {
+        height: 94px;
+        width: 94px;
+        margin: 15px;
+    }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+    .house { 
+        width: 100px;
+        height: 100px;
+        border-radius: 50px;
+    }
+
+    .house__marble {
+        width: 32px;
+        height: 32px;
+        border-radius: 16px;
+        margin: 2px;
+    }
+
+    .house__marble-container {
+        height: 76px;
+        width: 76px;
+        margin: 12px;
+    }
+}
+
+@media (max-width: 799px) {
+    .house { 
+        width: 80px;
+        height: 80px;
+        border-radius: 40px;
+    }
+
+    .house__marble {
+        height: 24px;
+        width: 24px;
+        border-radius: 12px;
+        margin: 1px;
+    }
+
+    .house__marble-container {
+        height: 56px;
+        width: 56px;
+        margin: 12px;
+    }
 }
 
 .house--picked-up .house__marble:last-of-type {
@@ -33,22 +114,12 @@
 }
 
 .house__marble-container {
-    height: 56px;
-    width: 56px;
-    margin: 12px;
-
     display: flex;
     flex-wrap: wrap;
 }
 
 .house__marble {
-    height: 24px;
-    width: 24px;
-
-    border-radius: 12px;
     border: 1px solid var(--field-border-color);
-
-    margin: 1px;
 }
 
 .house--red .house__marble {
