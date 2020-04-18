@@ -4,6 +4,8 @@
 
 :root {
   --wood-background: #d3b17d;
+  --text-black: #192823;
+
 
   /* Marble-related colors */
   --red: #c70039;
@@ -17,15 +19,23 @@
   --empty-field-even: #eae9e9; /* previously `lightslategrey` */
   --empty-field-odd: #d4d7dd; /* previously `grey` */
   --field-border-color: rgb(73, 73, 73);
+
+  color: var(--text-black);
 }
 
 button {
   background-color: white;
-  border-color: var(--black);
+  border-color: var(--text-black);
+  border-radius: 4px;
 
-  color: var(--black);
+  color: var(--text-black);
 
   font-size: 24px;
   height: 48px;
   padding: 0 12px;
 }
+
+a {
+  color: var(--text-black);
+}
+

@@ -12,6 +12,7 @@ export function initI18n() {
                         "landing-page__explanation": "Bitte wählen Sie ein Spiel-Kennwort und schicken Sie es an ihre Mitspieler. Das Kennwort darf nur Buchstaben und Zahlen enthalten.",
                         "landing-page__start-game": "Spiel Starten",
                         "landing-page__input-error": "Das Kennwort darf nur Buchstaben und Zahlen enthalten. Bitte wählen Sie ein anderes Passwort!",
+                        "footer__github-icon": "GitHub Logo",
                         "board__game-link-prefix": "Schicke deinen Mitspielern diesen Link",
                     }
                 }

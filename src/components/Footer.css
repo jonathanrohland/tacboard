@@ -1,0 +1,21 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    padding: 24px;
+}
+
+.footer__content {
+    display: flex;
+}
+
+.footer__link {
+    display: flex;
+    margin: 16px;
+    align-items: center;
+}
+
+.footer__github-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 4px;
+}

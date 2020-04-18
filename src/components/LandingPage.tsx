@@ -6,6 +6,7 @@ import { isValidGameId, updateHashWithGameId } from '../url_utils';
 import { GameId } from '../types';
 import { ActionType } from '../actions';
 import { connect } from 'react-redux';
+import Footer from './Footer';
 
 type DispatchProps = {
     setGameId: (gameId: GameId) => void;
@@ -39,6 +40,7 @@ function LandingPage(props: Props) {
                 </form>
 
             </div>
+            <Footer />
         </div>
     );
 }
