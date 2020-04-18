@@ -16,7 +16,7 @@ function Board() {
 
     return (
         <div className={classnames("Board")}>
-            <div>{`${t('board__game-link-prefix')}: ${document.location}`}</div>
+            <div>{t('board__game-link-prefix')}: <a href={document.location.toString()}>{document.location.toString()}</a></div>
             {fieldIndexes.map(fieldIndex => <Field index={fieldIndex} key={fieldIndex} />)}
             {[Color.RED, Color.BLUE, Color.GREEN, Color.BLACK].map(color => <House color={color} key={color} />)}
         </div>
