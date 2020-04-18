@@ -1,53 +1,58 @@
-import React from 'react';
-import { Provider } from 'react-redux'
-import { createStore } from 'redux';
-import queryString from 'query-string';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import React, { useRef } from 'react';
 
-
-import Board from './Board';
-import { rootReducer } from '../rootReducer';
-import { getWebsocket } from '../Websocket';
-
-import './App.css';
+import './LandingPage.css';
+import { useTranslation } from 'react-i18next';
+import { isValidGameId, updateHashWithGameId } from '../url_utils';
+import { GameId } from '../types';
 import { ActionType } from '../actions';
+import { connect } from 'react-redux';
 
-const initialState = rootReducer(undefined);
+type DispatchProps = {
+    setGameId: (gameId: GameId) => void;
+}
 
-// @ts-ignore
-const store = createStore(rootReducer, initialState, composeWithDevTools());
+type Props = DispatchProps;
 
-const webSocket = getWebsocket();
+function LandingPage(props: Props) {
+    const { t } = useTranslation();
+    const gameIdInput = useRef<HTMLInputElement>(null);
 
-webSocket.onmessage = (event => {
-    console.log('Received Data:', event.data);
-    const eventData = JSON.parse(event.data);
-    if (eventData.marblePositions) {
-        const nextMarblePositions = eventData.marblePositions;
-        console.log('Updating marblePositions from socket-message', nextMarblePositions);
-
-        store.dispatch({
-            type: ActionType.UPDATE_FROM_SERVER,
-            payload: {
-                marblePositions: nextMarblePositions
-            }
-        })
-    } else {
-        console.log('Received unhandlable socket event with data:', eventData);
+    function startGame() {
+        const inputValue = gameIdInput.current?.value;
+        if (inputValue && isValidGameId(inputValue)) {
+            updateHashWithGameId(inputValue);
+            props.setGameId(inputValue);
+        } else {
+            window.alert(t('landing-page__input-error'));
+        }
     }
-})
-
-function App() {
-    const locationHash = queryString.parse(window.location.hash);
-    console.log(locationHash);
 
     return (
-        <div className="App">
-            <Provider store={store}>
-                <Board />
-            </Provider>
+        <div className="landing-page">
+            <div className="landing-page__container">
+                <h1>{t('landing-page__header')}</h1>
+                <p> {t('landing-page__explanation')}</p>
+
+                <form className="landing-page__form" onSubmit={startGame}>
+                    <input className="landing-page__game-id-input" type="text" ref={gameIdInput}></input>
+                    <button type="submit" className="landing-page__start-button">{t('landing-page__start-game')}</button>
+                </form>
+
+            </div>
         </div>
     );
 }
 
-export default App;
+
+const mapDispatchToProps = (dispatch: any): DispatchProps => {
+    return {
+        setGameId: (gameId) => dispatch({
+            type: ActionType.SET_GAME_ID,
+            payload: {
+                gameId
+            },
+        }),
+    }
+}
+
+export default connect<{}, DispatchProps>(undefined, mapDispatchToProps)(LandingPage);

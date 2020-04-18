@@ -4,17 +4,18 @@ import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-import Board from './Board';
 import { rootReducer } from '../rootReducer';
 import { getWebsocket } from '../Websocket';
 
-import './App.css';
 import { ActionType } from '../actions';
+import { GameId } from '../types';
 
 import { initI18n } from '../i18n';
 import { getLocationHash, isValidGameId, updateHashWithGameId } from '../url_utils';
-import { GameId } from '../types';
-import { useTranslation } from 'react-i18next';
+
+import GameIdWrapper from './GameIdWrapper';
+import './App.css';
+
 
 const initialState = rootReducer(undefined);
 
@@ -43,9 +44,7 @@ webSocket.onmessage = (event => {
 
 initI18n();
 
-function App() {
-  const { t } = useTranslation();
-
+function updateGameIdFromHash() {
   const locationHash = getLocationHash();
   console.log('Location hash:', locationHash);
   let gameId: GameId | null = null;
@@ -53,25 +52,33 @@ function App() {
   if (isValidGameId(locationHash)) {
     console.log('Found valid game id in location-hash', locationHash);
     gameId = locationHash;
-  }
 
-  while (!gameId || !isValidGameId(gameId)) {
-    gameId = prompt(t('game-id-prompt'), "");
+    updateHashWithGameId(gameId);
+    store.dispatch({
+      type: ActionType.SET_GAME_ID,
+      payload: {
+        gameId
+      }
+    })
+  } else {
+    store.dispatch({
+      type: ActionType.CLEAR_GAME_ID,
+    })
   }
-  console.log('Set game id from prompt', gameId);
+}
 
-  updateHashWithGameId(gameId);
-  store.dispatch({
-    type: ActionType.SET_GAME_ID,
-    payload: {
-      gameId
-    }
-  })
+window.onpopstate = () => {
+  console.log('window.history', window.history);
+  updateGameIdFromHash();
+}
+
+function App() {
+  updateGameIdFromHash();
 
   return (
     <div className="App">
       <Provider store={store}>
-        <Board />
+        <GameIdWrapper />
       </Provider>
     </div>
   );

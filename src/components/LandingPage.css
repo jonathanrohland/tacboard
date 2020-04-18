@@ -1,0 +1,28 @@
+.landing-page {
+    width: 100vw;
+    height: 100vh;
+
+    background-color: var(--wood-background);
+}
+
+.landing-page__container{
+    width: 600px;
+
+    padding-top: 48px;
+    margin: auto;
+}
+
+@media (max-width: 720px) {
+    .landing-page__container{
+        width: 80%;
+    }
+}
+
+.landing-page__start-button {
+    margin: 16px
+}
+
+.landing-page__game-id-input {
+    font-size: 24px;
+    padding: 8px;
+}

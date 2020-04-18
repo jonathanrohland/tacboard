@@ -9,11 +9,15 @@ export function getLocationHash() {
     return hash;
 }
 
-export function isValidGameId(string: string) {
+export function isValidGameId(string: string): string is GameId {
     const match = GAME_ID_REGEX.exec(string);
     return !!match
 }
 
 export function updateHashWithGameId(gameId: GameId) {
     window.history.pushState({}, '', `#${gameId}`);
+}
+
+export function clearHash() {
+    window.history.pushState({}, '', '');
 }

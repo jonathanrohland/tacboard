@@ -120,6 +120,15 @@ export function rootReducer(state: State | undefined, action?: Action): State {
         }
     }
 
+    if (action?.type === ActionType.CLEAR_GAME_ID) {
+        // TODO: Properly close connection
+
+        return {
+            ...state,
+            gameId: undefined
+        }
+    }
+
     if (action?.type === ActionType.FIELD_CLICKED) {
         if (isMarblePickedUp(state)) {
             return setMarbleToField(state, action.payload!.index);

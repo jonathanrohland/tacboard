@@ -8,7 +8,10 @@ export function initI18n() {
             resources: {
                 de: {
                     translation: {
-                        "game-id-prompt": "Bitte wählen Sie ein Spiel-Kennwort und schicken Sie es an ihre Mitspieler. Das Kennwort darf nur Buchstaben und Zahlen enthalten."
+                        "landing-page__header": "Willkommen beim Tac-Brett",
+                        "landing-page__explanation": "Bitte wählen Sie ein Spiel-Kennwort und schicken Sie es an ihre Mitspieler. Das Kennwort darf nur Buchstaben und Zahlen enthalten.",
+                        "landing-page__start-game": "Spiel Starten",
+                        "landing-page__input-error": "Das Kennwort darf nur Buchstaben und Zahlen enthalten. Bitte wählen Sie ein anderes Passwort!",
                     }
                 }
             },
