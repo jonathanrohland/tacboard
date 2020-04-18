@@ -11,8 +11,10 @@ import { getWebsocket } from '../Websocket';
 import './App.css';
 import { ActionType } from '../actions';
 
+import { initI18n } from '../i18n';
 import { getLocationHash, isValidGameId, updateHashWithGameId } from '../url_utils';
 import { GameId } from '../types';
+import { useTranslation } from 'react-i18next';
 
 const initialState = rootReducer(undefined);
 
@@ -39,7 +41,11 @@ webSocket.onmessage = (event => {
   }
 })
 
+initI18n();
+
 function App() {
+  const { t } = useTranslation();
+
   const locationHash = getLocationHash();
   console.log('Location hash:', locationHash);
   let gameId: GameId | null = null;
@@ -50,7 +56,7 @@ function App() {
   }
 
   while (!gameId || !isValidGameId(gameId)) {
-    gameId = prompt("Bitte Spiel Passwort eingeben. Das Passwort darf nur Buchstaben und Zahlen enthalten.", "");
+    gameId = prompt(t('game-id-prompt'), "");
   }
   console.log('Set game id from prompt', gameId);
 
