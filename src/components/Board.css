@@ -10,6 +10,6 @@
 
     margin: auto;
 
-    background-color: #d3b17d;
-    box-shadow: 16px  16px #d3b17d;
+    background-color: var(--wood-background);
+    box-shadow: 16px  16px var(--wood-background);
 }
