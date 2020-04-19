@@ -7,6 +7,8 @@
 
 .landing-page__container{
     width: 600px;
+    min-height: 300px;
+    height: calc(100vh - 150px); /* Leave space for footer */
 
     padding-top: 48px;
     margin: auto;
