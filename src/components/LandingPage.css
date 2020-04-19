@@ -1,18 +1,26 @@
 .landing-page {
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
 
     background-color: var(--wood-background);
 }
 
 .landing-page__container{
     width: 600px;
-    min-height: 300px;
+    min-height: 400px;
     height: calc(100vh - 150px); /* Leave space for footer */
 
     padding-top: 48px;
     margin: auto;
 }
+
+@media (max-width: 450px) {
+
+    .landing-page__container{
+        height: calc(100vh - 250px); /* Leave space for footer */
+    }
+}
+
 
 @media (max-width: 720px) {
     .landing-page__container{
@@ -27,4 +35,5 @@
 .landing-page__game-id-input {
     font-size: 24px;
     padding: 8px;
+    max-width: 80%;
 }

@@ -6,6 +6,12 @@
     display: flex;
 }
 
+@media (max-width: 450px) {
+    .footer__content {
+        flex-direction: column;
+    }
+}
+
 .footer__link {
     display: flex;
     margin: 16px;
