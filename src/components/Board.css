@@ -9,7 +9,13 @@
     min-height: 600px;
 
     margin: auto;
+}
 
+.Board__container {
     background-color: var(--wood-background);
-    box-shadow: 16px  16px var(--wood-background);
+}
+
+.Board__game-link {
+    font-size: 24px;
+    padding: 12px;
 }

@@ -16,12 +16,11 @@ function Board() {
     const fieldIndexes = Array.from(Array(80).keys()) as Array<FieldIndex>;
 
     return (
-        <div>
-
+        <div className="Board__container">
+            <div className="Board__game-link">{t('board__game-link-prefix')}: <a href={document.location.toString()}>{document.location.toString()}</a></div>
             <div className={classnames("Board")}>
-                <div>{t('board__game-link-prefix')}: <a href={document.location.toString()}>{document.location.toString()}</a></div>
-                {fieldIndexes.map(fieldIndex => <Field index={fieldIndex} key={fieldIndex} />)}
                 {[Color.RED, Color.BLUE, Color.GREEN, Color.BLACK].map(color => <House color={color} key={color} />)}
+                {fieldIndexes.map(fieldIndex => <Field index={fieldIndex} key={fieldIndex} />)}
             </div>
             <Footer />
         </div>
