@@ -14,6 +14,9 @@ export function initI18n() {
                         "landing-page__input-error": "Das Kennwort darf nur Buchstaben und Zahlen enthalten. Bitte wählen Sie ein anderes Kennwort!",
                         "footer__github-icon": "GitHub Logo",
                         "board__game-link-prefix": "Schicke deinen Mitspielern diesen Link",
+                        "footer__buy-me-a-beer-link": "Gib uns ein Bier aus!",
+                        "footer__privacy-link": "Datenschutz",
+                        "footer__about-link": "Über tac-brett.de",
                     }
                 }
             },
