@@ -5,32 +5,30 @@
 }
 
 .field { 
-    width: 24px;
-    height: 24px;
-    border-radius: 12px;
+    width: calc(var(--field-radius) * 2);
+    height: calc(var(--field-radius) * 2);
+    border-radius: var(--field-radius);
+}
+
+:root {
+    --field-radius: 12px;
 }
 
 @media (min-width: 800px) and (min-height: 800px) {
-    .field { 
-        width: 32px;
-        height: 32px;
-        border-radius: 16px;
+    :root {
+        --field-radius: 16px;
     }
 }
 
 @media (min-width: 1000px) and (min-height: 1000px) {
-    .field { 
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
+    :root {
+        --field-radius: 20px;
     }
 }
 
 @media (min-width: 1200px) and (min-height: 1200px) {
-    .field { 
-        width: 48px;
-        height: 48px;
-        border-radius: 24px;
+    :root {
+        --field-radius: 24px;
     }
 }
 
@@ -71,87 +69,87 @@
     box-shadow: 0 0 4px 4px var(--selected-yellow);
 }
 
-.field-0 { top: calc(50% + 45% * 0);	left: calc(50% - 45% * 1); }
-.field-1 { top: calc(50% + 45% * 0.0980171403295606);	left: calc(50% - 45% * 0.995184726672197); }
-.field-2 { top: calc(50% + 45% * 0.195090322016128);	left: calc(50% - 45% * 0.98078528040323); }
-.field-3 { top: calc(50% + 45% * 0.290284677254462);	left: calc(50% - 45% * 0.956940335732209); }
-.field-4 { top: calc(50% + 45% * 0.38268343236509);	left: calc(50% - 45% * 0.923879532511287); }
-.field-5 { top: calc(50% + 45% * 0.471396736825998);	left: calc(50% - 45% * 0.881921264348355); }
-.field-6 { top: calc(50% + 45% * 0.555570233019602);	left: calc(50% - 45% * 0.831469612302545); }
-.field-7 { top: calc(50% + 45% * 0.634393284163645);	left: calc(50% - 45% * 0.773010453362737); }
-.field-8 { top: calc(50% + 45% * 0.707106781186547);	left: calc(50% - 45% * 0.707106781186548); }
-.field-9 { top: calc(50% + 45% * 0.773010453362737);	left: calc(50% - 45% * 0.634393284163646); }
-.field-10 { top: calc(50% + 45% * 0.831469612302545);	left: calc(50% - 45% * 0.555570233019602); }
-.field-11 { top: calc(50% + 45% * 0.881921264348355);	left: calc(50% - 45% * 0.471396736825998); }
-.field-12 { top: calc(50% + 45% * 0.923879532511287);	left: calc(50% - 45% * 0.38268343236509); }
-.field-13 { top: calc(50% + 45% * 0.956940335732209);	left: calc(50% - 45% * 0.290284677254462); }
-.field-14 { top: calc(50% + 45% * 0.98078528040323);	left: calc(50% - 45% * 0.195090322016128); }
-.field-15 { top: calc(50% + 45% * 0.995184726672197);	left: calc(50% - 45% * 0.0980171403295605); }
-.field-16 { top: calc(50% + 45% * 1);	left: calc(50% - 45% * 6.1257422745431E-17); }
-.field-17 { top: calc(50% + 45% * 0.995184726672197);	left: calc(50% - 45% * -0.0980171403295604); }
-.field-18 { top: calc(50% + 45% * 0.980785280403231);	left: calc(50% - 45% * -0.195090322016128); }
-.field-19 { top: calc(50% + 45% * 0.956940335732209);	left: calc(50% - 45% * -0.290284677254462); }
-.field-20 { top: calc(50% + 45% * 0.923879532511287);	left: calc(50% - 45% * -0.38268343236509); }
-.field-21 { top: calc(50% + 45% * 0.881921264348355);	left: calc(50% - 45% * -0.471396736825997); }
-.field-22 { top: calc(50% + 45% * 0.831469612302545);	left: calc(50% - 45% * -0.555570233019602); }
-.field-23 { top: calc(50% + 45% * 0.773010453362737);	left: calc(50% - 45% * -0.634393284163645); }
-.field-24 { top: calc(50% + 45% * 0.707106781186548);	left: calc(50% - 45% * -0.707106781186547); }
-.field-25 { top: calc(50% + 45% * 0.634393284163645);	left: calc(50% - 45% * -0.773010453362737); }
-.field-26 { top: calc(50% + 45% * 0.555570233019602);	left: calc(50% - 45% * -0.831469612302545); }
-.field-27 { top: calc(50% + 45% * 0.471396736825998);	left: calc(50% - 45% * -0.881921264348355); }
-.field-28 { top: calc(50% + 45% * 0.38268343236509);	left: calc(50% - 45% * -0.923879532511287); }
-.field-29 { top: calc(50% + 45% * 0.290284677254462);	left: calc(50% - 45% * -0.956940335732209); }
-.field-30 { top: calc(50% + 45% * 0.195090322016128);	left: calc(50% - 45% * -0.98078528040323); }
-.field-31 { top: calc(50% + 45% * 0.0980171403295608);	left: calc(50% - 45% * -0.995184726672197); }
-.field-32 { top: calc(50% + 45% * 1.22514845490862E-16);	left: calc(50% - 45% * -1); }
-.field-33 { top: calc(50% + 45% * -0.0980171403295606);	left: calc(50% - 45% * -0.995184726672197); }
-.field-34 { top: calc(50% + 45% * -0.195090322016128);	left: calc(50% - 45% * -0.980785280403231); }
-.field-35 { top: calc(50% + 45% * -0.290284677254462);	left: calc(50% - 45% * -0.956940335732209); }
-.field-36 { top: calc(50% + 45% * -0.382683432365089);	left: calc(50% - 45% * -0.923879532511287); }
-.field-37 { top: calc(50% + 45% * -0.471396736825998);	left: calc(50% - 45% * -0.881921264348355); }
-.field-38 { top: calc(50% + 45% * -0.555570233019602);	left: calc(50% - 45% * -0.831469612302545); }
-.field-39 { top: calc(50% + 45% * -0.634393284163645);	left: calc(50% - 45% * -0.773010453362737); }
-.field-40 { top: calc(50% + 45% * -0.707106781186547);	left: calc(50% - 45% * -0.707106781186548); }
-.field-41 { top: calc(50% + 45% * -0.773010453362737);	left: calc(50% - 45% * -0.634393284163645); }
-.field-42 { top: calc(50% + 45% * -0.831469612302545);	left: calc(50% - 45% * -0.555570233019603); }
-.field-43 { top: calc(50% + 45% * -0.881921264348355);	left: calc(50% - 45% * -0.471396736825998); }
-.field-44 { top: calc(50% + 45% * -0.923879532511287);	left: calc(50% - 45% * -0.38268343236509); }
-.field-45 { top: calc(50% + 45% * -0.956940335732209);	left: calc(50% - 45% * -0.290284677254462); }
-.field-46 { top: calc(50% + 45% * -0.98078528040323);	left: calc(50% - 45% * -0.195090322016129); }
-.field-47 { top: calc(50% + 45% * -0.995184726672197);	left: calc(50% - 45% * -0.0980171403295605); }
-.field-48 { top: calc(50% + 45% * -1);	left: calc(50% - 45% * -1.83772268236293E-16); }
-.field-49 { top: calc(50% + 45% * -0.995184726672197);	left: calc(50% - 45% * 0.0980171403295601); }
-.field-50 { top: calc(50% + 45% * -0.98078528040323);	left: calc(50% - 45% * 0.195090322016128); }
-.field-51 { top: calc(50% + 45% * -0.956940335732209);	left: calc(50% - 45% * 0.290284677254462); }
-.field-52 { top: calc(50% + 45% * -0.923879532511287);	left: calc(50% - 45% * 0.38268343236509); }
-.field-53 { top: calc(50% + 45% * -0.881921264348355);	left: calc(50% - 45% * 0.471396736825998); }
-.field-54 { top: calc(50% + 45% * -0.831469612302545);	left: calc(50% - 45% * 0.555570233019602); }
-.field-55 { top: calc(50% + 45% * -0.773010453362737);	left: calc(50% - 45% * 0.634393284163646); }
-.field-56 { top: calc(50% + 45% * -0.707106781186548);	left: calc(50% - 45% * 0.707106781186547); }
-.field-57 { top: calc(50% + 45% * -0.634393284163646);	left: calc(50% - 45% * 0.773010453362737); }
-.field-58 { top: calc(50% + 45% * -0.555570233019602);	left: calc(50% - 45% * 0.831469612302545); }
-.field-59 { top: calc(50% + 45% * -0.471396736825998);	left: calc(50% - 45% * 0.881921264348355); }
-.field-60 { top: calc(50% + 45% * -0.38268343236509);	left: calc(50% - 45% * 0.923879532511287); }
-.field-61 { top: calc(50% + 45% * -0.290284677254463);	left: calc(50% - 45% * 0.956940335732209); }
-.field-62 { top: calc(50% + 45% * -0.195090322016129);	left: calc(50% - 45% * 0.98078528040323); }
-.field-63 { top: calc(50% + 45% * -0.0980171403295605);	left: calc(50% - 45% * 0.995184726672197); }
+.field-0 { top: calc(50% + 45% * 0 - var(--field-radius));	left: calc(50% - 45% * 1 - var(--field-radius)); }
+.field-1 { top: calc(50% + 45% * 0.0980171403295606 - var(--field-radius));	left: calc(50% - 45% * 0.995184726672197 - var(--field-radius)); }
+.field-2 { top: calc(50% + 45% * 0.195090322016128 - var(--field-radius));	left: calc(50% - 45% * 0.98078528040323 - var(--field-radius)); }
+.field-3 { top: calc(50% + 45% * 0.290284677254462 - var(--field-radius));	left: calc(50% - 45% * 0.956940335732209 - var(--field-radius)); }
+.field-4 { top: calc(50% + 45% * 0.38268343236509 - var(--field-radius));	left: calc(50% - 45% * 0.923879532511287 - var(--field-radius)); }
+.field-5 { top: calc(50% + 45% * 0.471396736825998 - var(--field-radius));	left: calc(50% - 45% * 0.881921264348355 - var(--field-radius)); }
+.field-6 { top: calc(50% + 45% * 0.555570233019602 - var(--field-radius));	left: calc(50% - 45% * 0.831469612302545 - var(--field-radius)); }
+.field-7 { top: calc(50% + 45% * 0.634393284163645 - var(--field-radius));	left: calc(50% - 45% * 0.773010453362737 - var(--field-radius)); }
+.field-8 { top: calc(50% + 45% * 0.707106781186547 - var(--field-radius));	left: calc(50% - 45% * 0.707106781186548 - var(--field-radius)); }
+.field-9 { top: calc(50% + 45% * 0.773010453362737 - var(--field-radius));	left: calc(50% - 45% * 0.634393284163646 - var(--field-radius)); }
+.field-10 { top: calc(50% + 45% * 0.831469612302545 - var(--field-radius));	left: calc(50% - 45% * 0.555570233019602 - var(--field-radius)); }
+.field-11 { top: calc(50% + 45% * 0.881921264348355 - var(--field-radius));	left: calc(50% - 45% * 0.471396736825998 - var(--field-radius)); }
+.field-12 { top: calc(50% + 45% * 0.923879532511287 - var(--field-radius));	left: calc(50% - 45% * 0.38268343236509 - var(--field-radius)); }
+.field-13 { top: calc(50% + 45% * 0.956940335732209 - var(--field-radius));	left: calc(50% - 45% * 0.290284677254462 - var(--field-radius)); }
+.field-14 { top: calc(50% + 45% * 0.98078528040323 - var(--field-radius));	left: calc(50% - 45% * 0.195090322016128 - var(--field-radius)); }
+.field-15 { top: calc(50% + 45% * 0.995184726672197 - var(--field-radius));	left: calc(50% - 45% * 0.0980171403295605 - var(--field-radius)); }
+.field-16 { top: calc(50% + 45% * 1 - var(--field-radius));	left: calc(50% - 45% * 6.1257422745431E-17 - var(--field-radius)); }
+.field-17 { top: calc(50% + 45% * 0.995184726672197 - var(--field-radius));	left: calc(50% - 45% * -0.0980171403295604 - var(--field-radius)); }
+.field-18 { top: calc(50% + 45% * 0.980785280403231 - var(--field-radius));	left: calc(50% - 45% * -0.195090322016128 - var(--field-radius)); }
+.field-19 { top: calc(50% + 45% * 0.956940335732209 - var(--field-radius));	left: calc(50% - 45% * -0.290284677254462 - var(--field-radius)); }
+.field-20 { top: calc(50% + 45% * 0.923879532511287 - var(--field-radius));	left: calc(50% - 45% * -0.38268343236509 - var(--field-radius)); }
+.field-21 { top: calc(50% + 45% * 0.881921264348355 - var(--field-radius));	left: calc(50% - 45% * -0.471396736825997 - var(--field-radius)); }
+.field-22 { top: calc(50% + 45% * 0.831469612302545 - var(--field-radius));	left: calc(50% - 45% * -0.555570233019602 - var(--field-radius)); }
+.field-23 { top: calc(50% + 45% * 0.773010453362737 - var(--field-radius));	left: calc(50% - 45% * -0.634393284163645 - var(--field-radius)); }
+.field-24 { top: calc(50% + 45% * 0.707106781186548 - var(--field-radius));	left: calc(50% - 45% * -0.707106781186547 - var(--field-radius)); }
+.field-25 { top: calc(50% + 45% * 0.634393284163645 - var(--field-radius));	left: calc(50% - 45% * -0.773010453362737 - var(--field-radius)); }
+.field-26 { top: calc(50% + 45% * 0.555570233019602 - var(--field-radius));	left: calc(50% - 45% * -0.831469612302545 - var(--field-radius)); }
+.field-27 { top: calc(50% + 45% * 0.471396736825998 - var(--field-radius));	left: calc(50% - 45% * -0.881921264348355 - var(--field-radius)); }
+.field-28 { top: calc(50% + 45% * 0.38268343236509 - var(--field-radius));	left: calc(50% - 45% * -0.923879532511287 - var(--field-radius)); }
+.field-29 { top: calc(50% + 45% * 0.290284677254462 - var(--field-radius));	left: calc(50% - 45% * -0.956940335732209 - var(--field-radius)); }
+.field-30 { top: calc(50% + 45% * 0.195090322016128 - var(--field-radius));	left: calc(50% - 45% * -0.98078528040323 - var(--field-radius)); }
+.field-31 { top: calc(50% + 45% * 0.0980171403295608 - var(--field-radius));	left: calc(50% - 45% * -0.995184726672197 - var(--field-radius)); }
+.field-32 { top: calc(50% + 45% * 1.22514845490862E-16 - var(--field-radius));	left: calc(50% - 45% * -1 - var(--field-radius)); }
+.field-33 { top: calc(50% + 45% * -0.0980171403295606 - var(--field-radius));	left: calc(50% - 45% * -0.995184726672197 - var(--field-radius)); }
+.field-34 { top: calc(50% + 45% * -0.195090322016128 - var(--field-radius));	left: calc(50% - 45% * -0.980785280403231 - var(--field-radius)); }
+.field-35 { top: calc(50% + 45% * -0.290284677254462 - var(--field-radius));	left: calc(50% - 45% * -0.956940335732209 - var(--field-radius)); }
+.field-36 { top: calc(50% + 45% * -0.382683432365089 - var(--field-radius));	left: calc(50% - 45% * -0.923879532511287 - var(--field-radius)); }
+.field-37 { top: calc(50% + 45% * -0.471396736825998 - var(--field-radius));	left: calc(50% - 45% * -0.881921264348355 - var(--field-radius)); }
+.field-38 { top: calc(50% + 45% * -0.555570233019602 - var(--field-radius));	left: calc(50% - 45% * -0.831469612302545 - var(--field-radius)); }
+.field-39 { top: calc(50% + 45% * -0.634393284163645 - var(--field-radius));	left: calc(50% - 45% * -0.773010453362737 - var(--field-radius)); }
+.field-40 { top: calc(50% + 45% * -0.707106781186547 - var(--field-radius));	left: calc(50% - 45% * -0.707106781186548 - var(--field-radius)); }
+.field-41 { top: calc(50% + 45% * -0.773010453362737 - var(--field-radius));	left: calc(50% - 45% * -0.634393284163645 - var(--field-radius)); }
+.field-42 { top: calc(50% + 45% * -0.831469612302545 - var(--field-radius));	left: calc(50% - 45% * -0.555570233019603 - var(--field-radius)); }
+.field-43 { top: calc(50% + 45% * -0.881921264348355 - var(--field-radius));	left: calc(50% - 45% * -0.471396736825998 - var(--field-radius)); }
+.field-44 { top: calc(50% + 45% * -0.923879532511287 - var(--field-radius));	left: calc(50% - 45% * -0.38268343236509 - var(--field-radius)); }
+.field-45 { top: calc(50% + 45% * -0.956940335732209 - var(--field-radius));	left: calc(50% - 45% * -0.290284677254462 - var(--field-radius)); }
+.field-46 { top: calc(50% + 45% * -0.98078528040323 - var(--field-radius));	left: calc(50% - 45% * -0.195090322016129 - var(--field-radius)); }
+.field-47 { top: calc(50% + 45% * -0.995184726672197 - var(--field-radius));	left: calc(50% - 45% * -0.0980171403295605 - var(--field-radius)); }
+.field-48 { top: calc(50% + 45% * -1 - var(--field-radius));	left: calc(50% - 45% * -1.83772268236293E-16 - var(--field-radius)); }
+.field-49 { top: calc(50% + 45% * -0.995184726672197 - var(--field-radius));	left: calc(50% - 45% * 0.0980171403295601 - var(--field-radius)); }
+.field-50 { top: calc(50% + 45% * -0.98078528040323 - var(--field-radius));	left: calc(50% - 45% * 0.195090322016128 - var(--field-radius)); }
+.field-51 { top: calc(50% + 45% * -0.956940335732209 - var(--field-radius));	left: calc(50% - 45% * 0.290284677254462 - var(--field-radius)); }
+.field-52 { top: calc(50% + 45% * -0.923879532511287 - var(--field-radius));	left: calc(50% - 45% * 0.38268343236509 - var(--field-radius)); }
+.field-53 { top: calc(50% + 45% * -0.881921264348355 - var(--field-radius));	left: calc(50% - 45% * 0.471396736825998 - var(--field-radius)); }
+.field-54 { top: calc(50% + 45% * -0.831469612302545 - var(--field-radius));	left: calc(50% - 45% * 0.555570233019602 - var(--field-radius)); }
+.field-55 { top: calc(50% + 45% * -0.773010453362737 - var(--field-radius));	left: calc(50% - 45% * 0.634393284163646 - var(--field-radius)); }
+.field-56 { top: calc(50% + 45% * -0.707106781186548 - var(--field-radius));	left: calc(50% - 45% * 0.707106781186547 - var(--field-radius)); }
+.field-57 { top: calc(50% + 45% * -0.634393284163646 - var(--field-radius));	left: calc(50% - 45% * 0.773010453362737 - var(--field-radius)); }
+.field-58 { top: calc(50% + 45% * -0.555570233019602 - var(--field-radius));	left: calc(50% - 45% * 0.831469612302545 - var(--field-radius)); }
+.field-59 { top: calc(50% + 45% * -0.471396736825998 - var(--field-radius));	left: calc(50% - 45% * 0.881921264348355 - var(--field-radius)); }
+.field-60 { top: calc(50% + 45% * -0.38268343236509 - var(--field-radius));	left: calc(50% - 45% * 0.923879532511287 - var(--field-radius)); }
+.field-61 { top: calc(50% + 45% * -0.290284677254463 - var(--field-radius));	left: calc(50% - 45% * 0.956940335732209 - var(--field-radius)); }
+.field-62 { top: calc(50% + 45% * -0.195090322016129 - var(--field-radius));	left: calc(50% - 45% * 0.98078528040323 - var(--field-radius)); }
+.field-63 { top: calc(50% + 45% * -0.0980171403295605 - var(--field-radius));	left: calc(50% - 45% * 0.995184726672197 - var(--field-radius)); }
 
-.field-64 { top: 50%;	left: 21%; }
-.field-65 { top: 50%;	left: 17%; }
-.field-66 { top: 50%;	left: 13%; }
-.field-67 { top: 50%;	left: 9%; }
+.field-64 { top: calc(50% - var(--field-radius));	left: 20%; }
+.field-65 { top: calc(50% - var(--field-radius));	left: 16%; }
+.field-66 { top: calc(50% - var(--field-radius));	left: 12%; }
+.field-67 { top: calc(50% - var(--field-radius));	left: 8%; }
 
-.field-68 { top: 50%;	right: 18%; }
-.field-69 { top: 50%;	right: 14%; }
-.field-70 { top: 50%;	right: 10%; }
-.field-71 { top: 50%;	right: 6%; }
+.field-68 { top: calc(50% - var(--field-radius));	right: 19%; }
+.field-69 { top: calc(50% - var(--field-radius));	right: 15%; }
+.field-70 { top: calc(50% - var(--field-radius));	right: 11%; }
+.field-71 { top: calc(50% - var(--field-radius));	right: 7%; }
 
-.field-72 { left: 50%;	top: 21%; }
-.field-73 { left: 50%;	top: 17%; }
-.field-74 { left: 50%;	top: 13%; }
-.field-75 { left: 50%;	top: 9%; }
+.field-72 { left: calc(50% - var(--field-radius));	top: 20%; }
+.field-73 { left: calc(50% - var(--field-radius));	top: 16%; }
+.field-74 { left: calc(50% - var(--field-radius));	top: 12%; }
+.field-75 { left: calc(50% - var(--field-radius));	top: 8%; }
 
-.field-76 { left: 50%;	bottom: 18%; }
-.field-77 { left: 50%;	bottom: 14%; }
-.field-78 { left: 50%;	bottom: 10%; }
-.field-79 { left: 50%;	bottom: 6%; }
+.field-76 { left: calc(50% - var(--field-radius));	bottom: 19%; }
+.field-77 { left: calc(50% - var(--field-radius));	bottom: 15%; }
+.field-78 { left: calc(50% - var(--field-radius));	bottom: 11%; }
+.field-79 { left: calc(50% - var(--field-radius));	bottom: 7%; }

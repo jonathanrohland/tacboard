@@ -12,9 +12,9 @@
 }
 
 .house__marble {
-    height: 24px;
-    width: 24px;
-    border-radius: 12px;
+    width: calc(var(--field-radius) * 2);
+    height: calc(var(--field-radius) * 2);
+    border-radius: var(--field-radius);
     margin: 1px;
 }
 
@@ -32,9 +32,6 @@
     }
 
     .house__marble {
-        width: 32px;
-        height: 32px;
-        border-radius: 16px;
         margin: 2px;
     }
 
@@ -53,9 +50,6 @@
     }
 
     .house__marble {
-        width: 40px;
-        height: 40px;
-        border-radius: 20px;
         margin: 2px;
     }
 
@@ -74,9 +68,6 @@
     }
 
     .house__marble {
-        width: 48px;
-        height: 48px;
-        border-radius: 24px;
         margin: 3px;
     }
 
