@@ -13,7 +13,7 @@ function Footer() {
             <div className="footer__content">
                 <a href="/about.html" className="footer__link">{t('footer__about-link')}</a>
                 <a href="/privacy.html" className="footer__link">{t('footer__privacy-link')}</a>
-                <a className="footer__link" target="_blank" rel="noopener noreferrer" href="https://github.com/jonathanrohland/tacboard-frontend">
+                <a className="footer__link" target="_blank" rel="noopener noreferrer" href="https://github.com/jonathanrohland/tacboard">
                     <img className="footer__github-icon" src={githubIcon} alt={t('github-icon-alt-text')} />
                     Sieh dir den Code an
                 </a>
