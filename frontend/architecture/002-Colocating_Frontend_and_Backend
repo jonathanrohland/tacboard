@@ -1,0 +1,23 @@
+# Colocating Frontend and Backend in one Repository
+
+## Status
+
+Accepted
+
+## Context
+
+I initially created two separate Repositories for the tacboard Frontend and Backend. I also started creating releases whenever I updated the code in the S3 bucket.
+My original intention was to maintain both separately, because there is no shared code between them.
+
+After a while it became clear to me that this doesn't work the way I expected for the following reasons:
+* Even though the code is not directly coupled, the two projects are tied together by the shared API. It will not be possible to change the Backend without adapting the Frontend to the new API-format
+* Coordinating the releases on two repositories is tedious and error-prone.
+
+## Decision
+
+The backend-code has been moved to a sub-folder of the previous frontend-repo ([github.com/jonathanrohland/tacboard-frontend](https://github.com/jonathanrohland/tacboard-frontend)).
+The frontend-repo has been renamed to tacboard.
+
+## Consequences
+
+There will only be one release for each change. Everything gets better ;-)
