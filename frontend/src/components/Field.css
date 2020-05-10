@@ -70,6 +70,21 @@
     border-color: var(--selected-yellow);
 }
 
+.field-64, .field-65, .field-66, .field-67 {
+    box-shadow: 0 0 6px 0.5px var(--red);}
+
+.field-68, .field-69, .field-70, .field-71 {
+    box-shadow: 0 0 6px 0.5px var(--blue);
+}
+
+.field-72, .field-73, .field-74, .field-75 {
+    box-shadow: 0 0 6px 0.5px var(--black);
+}
+
+.field-76, .field-77, .field-78, .field-79 {
+    box-shadow: 0 0 6px 0.5px var(--green);
+}
+
 .field-0 { top: calc(50% + 45% * 0 - var(--field-radius));	left: calc(50% - 45% * 1 - var(--field-radius)); }
 .field-1 { top: calc(50% + 45% * 0.0980171403295606 - var(--field-radius));	left: calc(50% - 45% * 0.995184726672197 - var(--field-radius)); }
 .field-2 { top: calc(50% + 45% * 0.195090322016128 - var(--field-radius));	left: calc(50% - 45% * 0.98078528040323 - var(--field-radius)); }
