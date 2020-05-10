@@ -17,7 +17,7 @@
   
   /* Board-related colors */
   --empty-field-even: #eae9e9; /* previously `lightslategrey` */
-  --empty-field-odd: #d4d7dd; /* previously `grey` */
+  --empty-field-odd: #c9cbd1; /* previously `grey` */
   --field-border-color: rgb(73, 73, 73);
 
   color: var(--text-black);
