@@ -66,7 +66,8 @@
 }
 
 .field--picked-up {
-    box-shadow: 0 0 4px 4px var(--selected-yellow);
+    box-shadow: 0 0 4px 4px var(--selected-yellow), inset 0 0 2px 2px var(--selected-yellow);
+    border-color: var(--selected-yellow);
 }
 
 .field-0 { top: calc(50% + 45% * 0 - var(--field-radius));	left: calc(50% - 45% * 1 - var(--field-radius)); }
