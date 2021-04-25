@@ -11,7 +11,7 @@ The application only simulates the board and marbles for the TAC-game. The appli
 
 The game synchronises the state of the game via websocket-messages. There is no persistence of state on the server, when the last client closes the application the state is lost.
 
-At the moment there is only one global session available, so it is not possible to run multiple games in parallel.
+Game-states can be retrieved under a user-defined identifier and are cleared after one week.
 
 
 ## Available Scripts
