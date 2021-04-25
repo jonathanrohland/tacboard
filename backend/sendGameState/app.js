@@ -12,7 +12,7 @@ function saveStateToDB(gameId, state) {
     TableName: GAMES_TABLE_NAME, Item: {
       gameId: gameId,
       gameStateNumAttribute: state,
-      expires: Math.floor(Date.now() / 1000 + 60 * 60 * 48) // Expire in 48h
+      expires: Math.floor(Date.now() / 1000 + 60 * 60 * 24 * 7) // Expire games after one week
     }
   }).promise();
 }

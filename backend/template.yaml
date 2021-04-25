@@ -156,6 +156,9 @@ Resources:
       SSESpecification:
         SSEEnabled: True
       TableName: !Ref GamesTableName
+      TimeToLiveSpecification: 
+        AttributeName: "expires"
+        Enabled: True
   OnConnectFunction:
     Type: AWS::Serverless::Function
     Properties:

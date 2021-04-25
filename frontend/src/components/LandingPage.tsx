@@ -39,6 +39,7 @@ function LandingPage(props: Props) {
                     <button type="submit" className="landing-page__start-button">{t('landing-page__start-game')}</button>
                 </form>
 
+                <p> {t('landing-page__expiration-warning')}</p>
             </div>
             <Footer />
         </div>
