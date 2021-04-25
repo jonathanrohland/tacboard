@@ -2,14 +2,13 @@
 
 This project is a React-based single-page-app that provides a playing board for the boardgame [TAC](https://spieltac.de).
 
-The Frontend is intended to run against a Websocket-Server as described in the [tacboard-backend repository](https://github.com/jonathanrohland/tacboard-backend).
-
+The backend for the application is a serverless application based on AWS SAM, Amazon API Gateway and DynamoDB.
 
 ## Functionality
 
 The application only simulates the board and marbles for the TAC-game. The application was developed during the Corona-Crisis to facilitate playing TAC remotely via video-conferencing tools. Each party should own a separate set of cards for a fluent playing experience. Exchange of cards can be handled using messenger-apps and post-its to note the new value of swapped cards.
 
-The game synchronises the state of the game via websocket-messages. There is no persistence of state on the server, when the last client closes the application the state is lost.
+The game synchronises the state of the game via websocket-messages.
 
 Game-states can be retrieved under a user-defined identifier and are cleared after one week.
 
