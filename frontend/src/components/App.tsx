@@ -11,7 +11,7 @@ import { ActionType } from '../actions';
 import { GameId } from '../types';
 
 import { initI18n } from '../i18n';
-import { getLocationHash, isValidGameId, updateHashWithGameId } from '../url_utils';
+import { getLocationHash, isValidGameId, updateHashWithGameId } from '../urlUtils';
 
 import GameIdWrapper from './GameIdWrapper';
 import './App.css';

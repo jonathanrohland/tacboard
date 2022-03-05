@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 
 import './LandingPage.css';
 import { useTranslation } from 'react-i18next';
-import { isValidGameId, updateHashWithGameId } from '../url_utils';
+import { isValidGameId, updateHashWithGameId } from '../urlUtils';
 import { GameId } from '../types';
 import { ActionType } from '../actions';
 import { connect } from 'react-redux';
