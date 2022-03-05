@@ -51,7 +51,7 @@ exports.handler = async event => {
   const postToConnectionPromise = gameStatePromise.then(async gameStateDocument => {
 
     if (gameStateDocument.Item) {
-      console.log('Trying postToConnetionwith data', JSON.stringify(gameStateDocument.Item));
+      console.log('Trying postToConnection with data', JSON.stringify(gameStateDocument.Item));
 
       try {
         return await apigwManagementApi.postToConnection({ ConnectionId: connectionId, Data: JSON.stringify(gameStateDocument.Item.gameStateNumAttribute) }, function (err, data) {
